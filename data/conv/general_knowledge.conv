@@ -1,0 +1,17 @@
+U: What is machine learning?
+A: Machine learning is a branch of artificial intelligence where systems learn patterns from data rather than being explicitly programmed. There are three main types: supervised learning where the model learns from labeled examples, unsupervised learning where it finds structure in unlabeled data such as clustering, and reinforcement learning where an agent learns by interacting with an environment and receiving rewards. Common algorithms include neural networks, decision trees, support vector machines, and k-nearest neighbors.
+
+U: What is a neural network?
+A: A neural network is a computational model inspired by biological neurons. It consists of layers of interconnected nodes. The input layer receives data, hidden layers transform it through weighted connections and activation functions, and the output layer produces predictions. Training uses backpropagation to compute gradients of a loss function with respect to weights, then gradient descent updates the weights to minimize the loss. Deep neural networks have many hidden layers and can learn complex hierarchical representations.
+
+U: Explain what a transformer model is
+A: A transformer is a neural network architecture based entirely on attention mechanisms without recurrence or convolution. The self-attention mechanism allows each position in a sequence to attend to all other positions, capturing long-range dependencies efficiently. The architecture uses multi-head attention where multiple attention heads learn different aspects of relationships, feed-forward layers, and layer normalization. Transformers power large language models like GPT and BERT and have become dominant in natural language processing, computer vision, and other domains.
+
+U: What is tokenization in NLP?
+A: Tokenization converts raw text into discrete units called tokens that a model can process. Simple tokenization splits on whitespace or punctuation. Subword tokenization methods like Byte-Pair Encoding learn a vocabulary of character sequences by iteratively merging the most frequent pairs in a corpus. This balances vocabulary size against coverage: common words get their own token while rare words are split into subword pieces. The vocabulary typically contains 32000 to 100000 tokens for large language models.
+
+U: What is the difference between precision and recall?
+A: Precision measures what fraction of positive predictions are actually correct: true positives divided by true positives plus false positives. A high precision model rarely raises false alarms. Recall measures what fraction of actual positives were detected: true positives divided by true positives plus false negatives. A high recall model catches most real threats but may have many false positives. The F1 score is the harmonic mean of precision and recall and balances both. In security applications high recall is often more important to avoid missing threats.
+
+U: What is Windows 2000?
+A: Windows 2000 was released by Microsoft in February 2000. It was based on Windows NT 5.0 and aimed at both business workstations and servers. It introduced Active Directory for centralized network management, native USB support, improved hardware detection with Plug and Play, and the Microsoft Management Console. It was the successor to Windows NT 4.0 and the foundation for Windows XP. It is notable for its stability compared to the consumer Windows 9x line which ran on a fundamentally different kernel.

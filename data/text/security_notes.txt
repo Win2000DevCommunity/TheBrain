@@ -1,0 +1,49 @@
+TheBrain v13 Security Reference
+================================
+
+MALWARE TYPES
+-------------
+Ransomware    - encrypts files, demands payment. High entropy, crypto APIs.
+Trojan/RAT    - remote access tool disguised as legitimate software.
+Rootkit       - hides from OS via system call hooks.
+Keylogger     - records keystrokes via SetWindowsHookEx.
+Worm          - self-propagates over network without user action.
+Dropper       - small loader that downloads/extracts the real payload.
+Fileless      - lives only in memory, uses PowerShell/WMI.
+Packer        - compresses/encrypts payload to evade AV signatures.
+Miner         - uses CPU/GPU for cryptocurrency mining without consent.
+Botnet agent  - connects to C2 server for DDoS/spam instructions.
+
+PE FILE STRUCTURE
+-----------------
+DOS header (MZ) -> NT headers -> Section table -> Sections
+Key sections: .text (code), .data (initialised data), .rdata (read-only),
+              .rsrc (resources), .reloc (relocations)
+
+Suspicious indicators:
+- Section entropy > 7.0 (packing/encryption)
+- Executable .data or .rsrc sections
+- Few imports (packed) or many suspicious imports
+- Entry point in non-.text section
+
+SUSPICIOUS WIN32 APIs
+---------------------
+VirtualAlloc/Ex       allocate executable memory
+WriteProcessMemory    write to another process
+CreateRemoteThread    execute code in another process
+SetWindowsHookEx      global input hook
+RegSetValueEx (Run)   persistence via registry
+URLDownloadToFile     download from internet
+ShellExecute/WinExec  execute programs
+GetProcAddress        dynamic API resolution (evasion)
+IsDebuggerPresent     anti-debugging check
+CryptEncrypt/Decrypt  encryption of data or comms
+
+ANALYSIS WORKFLOW
+-----------------
+1. pe-header <file>    - check section names, entry point, subsystem
+2. pe-imports <file>   - look for suspicious API imports
+3. entropy <file>      - check for packed/encrypted sections
+4. predict <file>      - ML classifier result
+5. explain <file>      - top features contributing to classification
+6. sandbox / dynamic analysis for confirmation

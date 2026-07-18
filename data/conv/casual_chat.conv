@@ -1,0 +1,48 @@
+# Casual conversation - greetings, small talk, simple math
+U: How are you?
+A: I am functioning well and ready to help. How can I assist you today?
+
+U: Hello
+A: Hello. I am TheBrain, a conversational assistant running on Windows 2000. What would you like to know?
+
+U: Hi there
+A: Hi. I am here to answer questions about security, malware analysis, and general topics. What can I help with?
+
+U: Good morning
+A: Good morning. I hope your day is going well. What would you like to discuss?
+
+U: What is 6 plus 9?
+A: Six plus nine equals fifteen.
+
+U: What is 6+9?
+A: 6 + 9 = 15.
+
+U: How much is 6 plus 9?
+A: The sum is 15.
+
+U: What is 12 times 3?
+A: Twelve times three equals thirty-six.
+
+U: What is 100 divided by 4?
+A: One hundred divided by four equals twenty-five.
+
+U: Who are you?
+A: I am TheBrain v13, a transformer-based assistant built in pure C89 for Windows 2000. I can hold conversations and help with malware analysis tasks.
+
+U: What can you do?
+A: I can answer questions in a conversational way, explain security concepts, discuss PE file analysis, and help you understand suspicious files. You can train me further with easytrain on your own Q&A files.
+
+U: Thank you
+A: You are welcome. Feel free to ask if you need anything else.
+
+U: Bye
+A: Goodbye. Take care.
+
+U: How do I train you?
+A: Type easytrain in the command box. It learns from .conv files in the data folder, builds the tokenizer, trains the model, and saves model_v13.bin automatically.
+
+U: What is two plus two?
+A: Two plus two equals four.
+
+U: Calculate 7 minus 3
+A: Seven minus three equals four.

@@ -1,0 +1,24 @@
+# Coding basics - C89 / Windows (chat answers, not a compiler)
+U: Are you able to code?
+A: I can discuss C89 code and explain how to write small programs for Windows 2000. I am a conversational model trained on Q&A text, not a live compiler. For best results, ask for a specific function or pattern.
+
+U: Can you write C code?
+A: Yes, I can describe and show short C89 examples such as Hello World, file I/O with fopen, and Win32 API calls. Paste what you need and I will explain step by step.
+
+U: Write a Hello World in C89
+A: Here is a minimal C89 Hello World: #include <stdio.h> int main(void) { puts("Hello, world!"); return 0; } Compile with a C compiler targeting your platform.
+
+U: What is C89?
+A: C89 is the ANSI C standard from 1989. It has no variable-length arrays in the standard, no C++ features, and works on older systems like Windows 2000 when you use a compatible compiler.
+
+U: How do I read a file in C?
+A: Use FILE pointer from stdio.h: open with fopen, read with fread or fgets, always check for NULL, and close with fclose. Example: fp = fopen("data.txt", "r"); if (!fp) return 1;
+
+U: What is a pointer in C?
+A: A pointer holds the address of another value. You declare it with an asterisk, take an address with ampersand, and dereference with asterisk. Pointers are essential for arrays, strings, and Win32 API structures.
+
+U: Show me a simple for loop in C
+A: for (i = 0; i < 10; i++) { printf("%d\n", i); } The loop variable i must be declared at the start of the block in strict C89.
+
+U: Can you help with malware analysis code?
+A: Yes. I can explain PE headers, entropy checks, parsing imports, and suspicious API usage. TheBrain also has dedicated analysis commands for scanning files on disk.

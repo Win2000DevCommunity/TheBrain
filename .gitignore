@@ -1,0 +1,47 @@
+# Build output
+*.exe
+*.dll
+*.obj
+*.o
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.map
+*.res
+
+# Models, tokenizers, embeddings, and checkpoints
+*.bin
+*.bpak
+*.ckpt
+checkpoints/
+ckpt_*.bin
+
+# Runtime and training output
+*.log
+*.csv
+crash*.txt
+brain_*.txt
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+.vs/
+.vscode/
+.idea/
+Debug/
+Release/
+x86/
+x64/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

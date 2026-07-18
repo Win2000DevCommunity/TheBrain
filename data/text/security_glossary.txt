@@ -1,0 +1,76 @@
+MALWARE SECURITY GLOSSARY
+==========================
+
+APT (Advanced Persistent Threat): A sophisticated long-term targeted attack
+campaign carried out by well-funded adversaries, often nation-state actors.
+Examples include Lazarus Group (North Korea), APT28 (Russia), APT41 (China).
+
+BOTNET: A network of compromised computers controlled by a command-and-control
+server. Used for DDoS attacks, spam campaigns, credential theft, and
+cryptocurrency mining. Operators rent botnet access to other criminals.
+
+C2 / C&C (Command and Control): Infrastructure used by attackers to send
+commands to compromised systems and receive stolen data. Communication channels
+include HTTP, HTTPS, DNS tunneling, social media APIs, and peer-to-peer.
+
+CVE (Common Vulnerabilities and Exposures): A standardized identifier for
+publicly known security vulnerabilities. Format: CVE-YEAR-NUMBER. Maintained
+by MITRE. A CVSS score from 0-10 rates severity.
+
+DROPPER: A small malware component whose sole purpose is to download and
+execute a larger payload. Droppers are often highly obfuscated and change
+frequently to evade antivirus signatures.
+
+EDR (Endpoint Detection and Response): Security software that monitors endpoint
+activity in real time, records events for forensic analysis, and can
+automatically respond to detected threats by isolating hosts.
+
+EXPLOIT: Code that takes advantage of a vulnerability in software. Categories
+include buffer overflow, use-after-free, heap spray, format string bugs, and
+integer overflow. Zero-day exploits target unpatched vulnerabilities.
+
+FILELESS MALWARE: Malware that executes entirely in memory without writing
+files to disk. Common techniques include PowerShell scripts loaded via WMI,
+reflective DLL injection, and process hollowing. Harder to detect with
+traditional file-based scanning.
+
+HONEYPOT: A decoy system designed to attract attackers and study their
+techniques. High-interaction honeypots run real services to gather detailed
+intelligence. Low-interaction honeypots simulate services to detect scanning.
+
+IOC (Indicator of Compromise): Forensic artifacts that suggest a system has
+been breached. Examples: specific file hashes, IP addresses, domain names,
+registry keys, mutexes, and YARA rule matches.
+
+LATERAL MOVEMENT: Techniques attackers use to progressively move through a
+network after gaining initial access, seeking higher privileges or valuable
+data. Common tools include PsExec, WMI, pass-the-hash, and Kerberoasting.
+
+MITRE ATT&CK: A knowledge base of adversary tactics, techniques, and procedures
+based on real-world observations. Organized into tactics (goals) and techniques
+(methods). Widely used for threat modeling and detection engineering.
+
+PACKER: Software that compresses and encrypts an executable to change its
+binary signature and evade detection. The packed file contains a stub that
+decompresses and executes the original code at runtime.
+
+PERSISTENCE: Techniques malware uses to survive reboots. Common methods:
+registry Run keys, scheduled tasks, services, WMI event subscriptions,
+startup folder shortcuts, and browser extension installation.
+
+ROOTKIT: Malware designed to conceal itself and other malicious software.
+Kernel rootkits modify operating system code or data structures. Bootkits
+infect the boot process. Detection requires out-of-band scanning.
+
+SANDBOX: An isolated environment for safely executing and analyzing suspicious
+files. Records all system calls, file operations, registry changes, network
+connections, and process activity. Commercial examples: Cuckoo, Any.run, JoeSandbox.
+
+SOCIAL ENGINEERING: Manipulating people rather than systems. Phishing uses
+fake emails. Spear phishing targets specific individuals. Vishing uses phone
+calls. Pretexting creates false scenarios. Training and awareness are the
+primary defenses.
+
+ZERO-DAY: A vulnerability unknown to the vendor with no available patch.
+Extremely valuable to attackers because defenders have zero days to prepare.
+Once disclosed and patched it becomes a n-day vulnerability.

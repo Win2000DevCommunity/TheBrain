@@ -1,0 +1,21 @@
+# TheBrain usage and commands
+U: How do I train TheBrain on a dangerous file?
+A: Use the command: train C:\path\to\file.exe 1 (1 means dangerous). For safe files use: train C:\path\to\file.exe 0. After labelling a few files TheBrain retrains automatically. You can also drag and drop a file into the input box then type: train <file> 1
+
+U: How do I scan a whole directory?
+A: Type: scan C:\suspicious\folder - TheBrain will scan every file and predict whether it is safe or dangerous. You can also click the Scan button in the toolbar and browse to the folder. Results appear colour-coded: red for dangerous, green for safe.
+
+U: What does pretrain do?
+A: Pretrain initialises the transformer neural network with random weights scaled to your system RAM. On a 2GB machine it creates an 8-layer 512-dimensional model. You must run pretrain before fulltrain or generate.
+
+U: How do I train the AI on my own text?
+A: First train the tokenizer: bpetrain C:\my_corpus_dir - Then initialise the model: pretrain - Then train: fulltrain C:\my_corpus_dir - The corpus directory can contain .c .py .txt and .conv files. Training progress is shown in the progress bar.
+
+U: How do I chat with the AI?
+A: Just type anything in the input box and press Enter. The AI will respond using the conversational engine. If the model has not been trained yet it will tell you to run pretrain first. You can also click the Converse button.
+
+U: How do I check the model status?
+A: Type: stats - This shows training accuracy, number of samples, transformer training steps, conversation turns, and system info. Type: version for full model architecture details.
+
+U: What is the guard feature?
+A: The real-time file guard watches a directory and automatically scans any new or modified file. Enable it with: guard on C:\downloads - It will alert you in red with a flashing window if a dangerous file appears. Disable with: guard off

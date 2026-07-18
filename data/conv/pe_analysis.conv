@@ -1,0 +1,14 @@
+U: How do I read a PE file header?
+A: A PE file starts with the DOS header containing the magic bytes MZ at offset 0. The e_lfanew field at offset 0x3C points to the NT headers. The NT headers start with the PE signature 0x00004550, followed by the COFF file header containing machine type, number of sections, and timestamp, then the optional header with entry point, image base, and data directory entries. The section table follows immediately after the optional header.
+
+U: What is the Import Address Table?
+A: The IAT is a table in the PE file that lists all DLLs and functions the executable imports. At load time the Windows loader resolves each entry to the actual function address. Malware analysts examine the IAT to understand what capabilities a sample has. Suspicious imports include VirtualAlloc for memory allocation, CreateRemoteThread for injection, GetProcAddress for dynamic API resolution often used to hide imports, and WinExec or ShellExecute for executing other programs.
+
+U: What is the difference between static and dynamic analysis?
+A: Static analysis examines the file without executing it. You look at the PE headers, strings, imports, entropy, and disassemble the code. It is safe but packers and obfuscation can hide the real behavior. Dynamic analysis runs the malware in a controlled environment such as a sandbox or debugger and observes what it actually does: file system changes, registry modifications, network connections, and process creation. Best practice is to combine both approaches.
+
+U: How do I detect a packed executable?
+A: Signs of packing include high entropy above 7.0 in code sections, very few imports often just LoadLibrary and GetProcAddress, unusual section names that differ from standard .text .data .rsrc, section sizes where virtual size is much larger than raw size indicating decompression at runtime, and the entry point being outside the .text section. Tools like UPX stubs have recognizable byte signatures that can be detected automatically.
+
+U: What is YARA and how is it used?
+A: YARA is a pattern matching tool for malware classification. You write rules that describe patterns of bytes, strings, or conditions that identify a specific malware family. A rule has a meta section for description, a strings section defining patterns using hex bytes, plain text, or regular expressions, and a condition section specifying when the rule matches. Rules can be applied to files, memory dumps, or network traffic. The open source community maintains large rulesets like those from the malware research community on GitHub.

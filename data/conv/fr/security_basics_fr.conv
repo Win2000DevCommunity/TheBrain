@@ -1,0 +1,11 @@
+U: Qu'est-ce que le ransomware ?
+A: Le ransomware chiffre les fichiers de la victime et exige un paiement pour les restaurer. Il utilise souvent AES pour les fichiers et RSA pour proteger la cle AES. Familles connues : WannaCry, LockBit, BlackCat.
+
+U: Qu'est-ce que l'injection de processus ?
+A: L'injection de processus insere du code malveillant dans un processus legitime pour se cacher. Methodes courantes : CreateRemoteThread, WriteProcessMemory, process hollowing.
+
+U: Que signifie une entropie elevee dans une section PE ?
+A: Une entropie superieure a 7.0 bits/octet indique souvent compression ou chiffrement. Le code normal est autour de 5-6. Les packers augmentent l'entropie pour masquer la charge.
+
+U: Comment me proteger des malwares ?
+A: Mettez a jour Windows, utilisez des mots de passe forts, evitez les pieces jointes suspectes, sauvegardez vos fichiers, et surveillez VirtualAllocEx et CreateRemoteThread.

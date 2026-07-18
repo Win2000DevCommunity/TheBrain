@@ -1,0 +1,33 @@
+Windows Internals Reference for Malware Analysis
+==================================================
+
+PROCESS ENVIRONMENT BLOCK (PEB)
+- Located at FS:[0x30] (x86) or GS:[0x60] (x64)
+- Contains InLoadOrderModuleList: list of loaded DLLs
+- Malware walks PEB to find kernel32/ntdll without GetProcAddress
+- Detecting: NtQueryInformationProcess or VirtualQueryEx
+
+REGISTRY PERSISTENCE LOCATIONS
+- HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+- HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+- HKLM\System\CurrentControlSet\Services  (service install)
+- HKCU\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+- Scheduled tasks (HKLM\Software\Microsoft\Windows NT\CurrentVersion\Schedule)
+
+INJECTION TECHNIQUES
+1. DLL Injection         - CreateRemoteThread + LoadLibrary
+2. Process Hollowing     - create suspended, unmap, write payload, resume
+3. Thread Hijacking      - SuspendThread, SetThreadContext, ResumeThread
+4. Reflective Loading    - DLL maps itself without LoadLibrary
+5. APC Injection         - QueueUserAPC into alertable thread
+6. Atom Bombing          - GlobalAddAtom + NtSetInformationThread
+
+EVASION TECHNIQUES
+- Packed/encrypted payload (high entropy sections)
+- API hashing (avoids string "VirtualAlloc" in imports)
+- Syscall-based (bypasses user-mode hooks)
+- Process parent spoofing
+- Timing checks (delays to evade sandbox)
+- IsDebuggerPresent / CheckRemoteDebuggerPresent
+- AMSI bypass (PowerShell antimalware interface)
+- ETW patching (blinds EDR event tracing)

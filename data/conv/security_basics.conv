@@ -1,0 +1,18 @@
+# Security basics Q&A
+U: What is ransomware?
+A: Ransomware is malware that encrypts your files and demands payment (usually cryptocurrency) to restore them. Common families include WannaCry, LockBit, and REvil. The key defence is maintaining offline backups.
+
+U: How does a keylogger work?
+A: A keylogger records keystrokes to steal passwords and sensitive data. Software keyloggers typically use SetWindowsHookEx with WH_KEYBOARD_LL on Windows to intercept every key before it reaches the application. Detection: look for suspicious SetWindowsHookEx calls in the import table.
+
+U: What is process injection?
+A: Process injection is a technique where malware writes code into another process and executes it there. The classic method uses OpenProcess, VirtualAllocEx, WriteProcessMemory, then CreateRemoteThread. This lets malware hide inside legitimate processes like svchost.exe.
+
+U: What does high entropy mean in a PE file?
+A: High entropy (above 7.0 bits per byte) in a PE section usually means the data is either compressed or encrypted. Normal compiled code sits around 5-6 bits per byte. Packers encrypt the real payload and store it in a high-entropy section, decrypting it at runtime.
+
+U: What is a rootkit?
+A: A rootkit hides malicious code from the operating system. It typically works by hooking system calls, for example patching NtQuerySystemInformation in ntdll.dll to filter out its own processes from the process list. Kernel-mode rootkits are harder to detect than user-mode ones.
+
+U: What are suspicious Windows APIs for malware?
+A: The most suspicious APIs are VirtualAlloc and VirtualAllocEx (allocating executable memory), WriteProcessMemory (writing to another process), CreateRemoteThread (executing in another process), SetWindowsHookEx (input hooking), RegSetValueEx under Run keys (persistence), and URLDownloadToFile (downloading payloads).
