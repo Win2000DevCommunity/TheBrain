@@ -16,7 +16,6 @@ model.
 This is unfinished research and preservation work, not a production AI or
 antivirus product.
 
-<<<<<<< HEAD
 - Generated replies can still be confused, repetitive, incomplete, or wrong.
 - The application may occasionally crash, especially during large training
   runs or when memory is constrained.
@@ -32,7 +31,6 @@ antivirus product.
   its predictions are meaningful.
 - The PE parser and x86 decoder are deliberately small and do not replace
   mature reverse-engineering tools.
->>>>>>> b181915 (Improve README with code-accurate technical documentation.)
 
 The project is published in its current state so its source and training work
 are preserved and can be improved.
